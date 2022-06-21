@@ -1,40 +1,20 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Python 웹프로젝트 v1</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/webproject.css">
-    <style>
+{% extends 'layout/base.html' %}
 
-        /* 로그인한 회원의 정보 테이블 배치 */
-        table { /*border: 1px solid red;*/
-           margin: 120px auto }
+{% block title %}member/myinfo{% endblock %}
 
-        /* 회원 정보 각 행에 여백 주기 */
-        th, td { padding: 10px }
+{% block style %}
+/* 로그인한 회원의 정보 테이블 배치 */
+table { /*border: 1px solid red;*/
+   margin: 120px auto }
 
-        /* 회원 정보 테이블의 제목 정렬하기 */
-        th { text-align: right }
+/* 회원 정보 각 행에 여백 주기 */
+th, td { padding: 10px }
 
-    </style>
-</head>
-<body>
-<div id="wrap">
-    <header>
-        <h1>Python 웹프로젝트 v1</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="join.html">회원가입</a></li>
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="board.html">게시판</a></li>
-                <li><a href="myinfo.html">회원정보</a></li>
-            </ul>
-        </nav>
-        <hr>
-    </header>
-    <div id="main">
+/* 회원 정보 테이블의 제목 정렬하기 */
+th { text-align: right }
+{% endblock %}
+
+{% block content %}
         <h2>회원정보</h2>
         <table>
             <tr><th>아이디</th><td>zzyzzy</td></tr>
@@ -42,11 +22,6 @@
             <tr><th>이메일</th><td>zzyzzy@naver.com</td></tr>
             <tr><th>가입일</th><td>2022-05-27 12:17:36</td></tr>
         </table>
-    </div>
-    <footer>
-        <hr>
-        <span>copyright &copy; 2022. zzyzzy. all rights reserved.</span>
-    </footer>
-</div>
-</body>
-</html>
+{% endblock %}
+
+{% block jscript %}{% endblock %}
