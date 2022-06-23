@@ -3,33 +3,33 @@
 {% block title %}board/list{% endblock %}
 
 {% block style %}
-        /* 페이지네이션 가운데 정렬 */
-        #pgnav { text-align: center; margin-left: -100px }
+    /* 페이지네이션 가운데 정렬 */
+    #pgnav { text-align: center; margin-left: -100px }
 
-        /* 페이지네이션의 페이지항목 간격 재조정 */
-        #pgnav li { margin-left: 10px }
+    /* 페이지네이션의 페이지항목 간격 재조정 */
+    #pgnav li { margin-left: 10px }
 
-        /* 페이지네이션의 현재 페이지에 대한 스타일 지정 */
-        .cpage { font-weight: bold; font-size: 50px;
-                 color: red }
+    /* 페이지네이션의 현재 페이지에 대한 스타일 지정 */
+    .cpage { font-weight: bold; font-size: 50px;
+             color: red }
 
-        /* 게시판 목록 테이블 가운데 정렬 */
-        table { width: 60%; margin: 65px auto -10px;
-            /*border: 1px solid black;*/
-            border-collapse: collapse;
-            table-layout: fixed; }
+    /* 게시판 목록 테이블 가운데 정렬 */
+    table { width: 60%; margin: 65px auto -10px;
+        /*border: 1px solid black;*/
+        border-collapse: collapse;
+        table-layout: fixed; }
 
-        th, td { border: 1px solid black;
-            padding: 10px; text-align: center }
+    th, td { border: 1px solid black;
+        padding: 10px; text-align: center }
 
-        td:nth-child(2) { white-space: nowrap;
-            overflow: hidden; text-overflow: ellipsis }
+    td:nth-child(2) { white-space: nowrap;
+        overflow: hidden; text-overflow: ellipsis }
 
-        td:nth-child(2) a:hover { color: crimson }
-        td:nth-child(2) a:active { color: crimson }
+    td:nth-child(2) a:hover { color: crimson }
+    td:nth-child(2) a:active { color: crimson }
 
-        .btns { text-align: right; border-top: none;
-            border-left: none; border-right: none; }
+    .btns { text-align: right; border-top: none;
+        border-left: none; border-right: none; }
 {% endblock %}
 
 {% block content %}
