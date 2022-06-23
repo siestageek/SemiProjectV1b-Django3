@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}member/login{% endblock %}
+
+{% block style %}
+/* 로그인 폼 배치하기 */
+form { /*border: 1px solid red;*/ width: 350px;
+    margin: 150px auto }
+
+form div { margin-top: 10px; }
+
+form label { display: inline-block;
+    width: 120px; text-align: right;
+    font-weight: bold }
+{% endblock %}
+
+{% block content %}
+<h2>회원가입완료</h2>
+<h3>아이디 : {{ form.userid }}</h3>
+<h3>이름 : {{ form.name }}</h3>
+<h3>이메일 : {{ form.email }}</h3>
+
+<hr>
+<div><a href="/login">로그인 하러 가기</a></div>
+
+{% endblock %}
+{% block jscript %}{% endblock %}
