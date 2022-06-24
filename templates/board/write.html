@@ -18,11 +18,13 @@ form label { display:inline-block;
 {% block content %}
     <h2>게시판 새글쓰기</h2>
     <form name="boardfrm" method="post">
+    {% csrf_token %}
+    {{ error }}
     <div><label for="title">제목</label>
         <input type="text" name="title" id="title"></div>
 
     <div><label for="title">작성자</label>
-        <span>zzyzzy</span></div>
+        <span>abc123</span></div>
 
     <div><label for="contents" class="dragup">본문</label>
         <textarea name="contents" id="contents"
@@ -30,10 +32,36 @@ form label { display:inline-block;
             style="resize: none"></textarea></div>
 
     <div><label></label>
-            <button type="submit">입력완료</button>
+            <button type="button" id="boardbtn">입력완료</button>
             <button type="reset">다시입력</button>
     </div>
+
+    <input type="hidden" name="userid" value="abc123">
     </form>
 {% endblock %}
 
-{% block jscript %}{% endblock %}
+{% block jscript %}
+<script>
+    const boardbtn = document.querySelector('#boardbtn')
+    boardbtn.addEventListener('click', () => {
+        const title = document.boardfrm.title;
+        const contents = document.boardfrm.contents;
+
+        if (title.value == '') {
+            alert('제목을 작성하세요!');
+            title.focus();
+            return;
+        } else if (contents.value == '') {
+            alert('본문을 작성하세요!');
+            contents.focus();
+            return;
+        } else {
+            document.boardfrm.submit();
+        }
+    });
+</script>
+{% endblock %}
+
+
+
+
