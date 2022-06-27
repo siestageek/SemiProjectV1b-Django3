@@ -7,7 +7,7 @@ from member.models import Member
 class Board(models.Model):
     id=models.AutoField(primary_key=True)
     title=models.CharField(max_length=100)
-    userid=models.ForeignKey(Member, db_column='userid',
+    member=models.ForeignKey(Member, related_name='board',
                              on_delete=models.CASCADE)
     regdate=models.DateTimeField(default=datetime.now)
     views=models.IntegerField(default=0)
